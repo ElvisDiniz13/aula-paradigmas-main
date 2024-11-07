@@ -1,0 +1,8 @@
+services:
+  python-imperativo: # Nome do serviço que será executado
+    container_name: python-imperativo # Nome do contêiner no Docker
+    image: python:3.12 # Imagem base do contêiner, usando Python na versão 3.12
+    working_dir: /src # Diretório de trabalho dentro do contêiner onde os arquivos serão acessados
+    volumes: # Montagem de volumes para persistência de dados e acesso a arquivos
+      - ./:/src # Monta o diretório atual (.) no diretório /src do contêiner
+    command: tail -f /dev/null # Comando que mantém o contêiner em execução, sem encerrar

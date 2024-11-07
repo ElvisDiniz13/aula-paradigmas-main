@@ -1,0 +1,22 @@
+services:
+  frontend:
+    # nome do container do frontend
+    container_name: frontend
+    # diretório onde o Dockerfile do frontend está localizado para fazer o build e gerar a imagem
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # volumes compartilhados entre a máquina local e o container do frontend
+    volumes:
+      - dependencias_frontend:/src/node_modules # volume persistente para node_modules
+      - ./:/src # mapeia o diretório do frontend local para o container
+    # mapeamento de portas: expõe a porta 3000 da máquina local para a porta 3000 do container
+    ports:
+      - "3000:3000"
+    # comando a ser executado quando o container for iniciado
+    command: npm run dev
+
+# volumes docker a serem criados
+volumes:
+  # volume para as dependências do frontend (node_modules)
+  dependencias_frontend:

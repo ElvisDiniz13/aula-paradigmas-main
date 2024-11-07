@@ -1,0 +1,12 @@
+services:
+  postgres: # Definindo o serviço chamado 'postgres'
+    image: postgres:13-alpine # Usando a imagem do PostgreSQL versão 13 baseada em Alpine Linux
+    container_name: db # Nome do container será 'db'
+    restart: always # O container será reiniciado automaticamente se falhar ou for parado
+    environment: # Variáveis de ambiente para configuração do banco de dados
+      - POSTGRES_USER=postgres # Nome de usuário padrão para o banco de dados
+      - POSTGRES_PASSWORD=postgres # Senha do usuário padrão
+      - POSTGRES_DB=postgres # Nome do banco de dados padrão que será criado
+    volumes: # Montagens de volumes para persistência de dados e inicialização
+      - ./queries:/queries # Monta a pasta local 'queries' no container para armazenar scripts SQL
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql # Monta o arquivo de inicialização 'db.sql' que será executado ao iniciar o banco de dados

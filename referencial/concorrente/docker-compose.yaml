@@ -1,0 +1,7 @@
+services:
+  golang:
+    image: golang # Define a imagem do contêiner como a imagem oficial do Golang
+    working_dir: /src # Define o diretório de trabalho dentro do contêiner como /src
+    volumes:
+      - ./:/src # Monta o diretório atual (.) no diretório /src dentro do contêiner. Isso permite que você acesse os arquivos do seu projeto no contêiner.
+    command: tail -f /dev/null # Mantém o contêiner em execução sem fazer nada, para que você possa acessar o terminal do contêiner e executar comandos interativamente

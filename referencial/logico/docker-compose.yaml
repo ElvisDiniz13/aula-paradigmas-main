@@ -1,0 +1,7 @@
+services:
+  swipl: # Serviço para rodar um contêiner com SWI-Prolog
+    image: swipl # Imagem do Docker para o SWI-Prolog
+    working_dir: /src # Diretório de trabalho dentro do contêiner
+    volumes:
+      - ./:/src # Monta o diretório atual no diretório de trabalho do contêiner
+    command: tail -f /dev/null # Mantém o contêiner em execução, aguardando comandos

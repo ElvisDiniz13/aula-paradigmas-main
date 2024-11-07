@@ -1,0 +1,20 @@
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d3db2;
+}
+
+.title {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.aula {
+  color: white;
+}
+

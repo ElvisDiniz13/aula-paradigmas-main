@@ -1,0 +1,8 @@
+services:
+  python-funcional: # Serviço para rodar um contêiner Python com Programação Funcional
+    container_name: python-funcional # Nome do contêiner
+    image: python:3.12 # Imagem do Docker com Python versão 3.12
+    working_dir: /src # Diretório de trabalho dentro do contêiner
+    volumes:
+      - ./:/src # Monta o diretório atual no diretório de trabalho do contêiner
+    command: tail -f /dev/null # Mantém o contêiner em execução, aguardando comandos
